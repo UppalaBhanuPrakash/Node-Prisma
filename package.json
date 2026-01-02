@@ -1,0 +1,32 @@
+{
+  "name": "my_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "prisma:generate": "prisma generate --schema=./prisma/schema1.prisma && prisma generate --schema=./prisma/schema2.prisma",
+    "prisma:migrate:db1": "prisma migrate dev --schema=./prisma/schema1.prisma",
+    "prisma:migrate:db2": "prisma migrate dev --schema=./prisma/schema2.prisma",
+    "prisma:migrate:all": "npm run prisma:migrate:db1 && npm run prisma:migrate:db2",
+    "prisma:studio:db1": "prisma studio --schema=./prisma/schema1.prisma",
+    "prisma:studio:db2": "prisma studio --schema=./prisma/schema2.prisma",
+    "prisma:push:db1": "prisma db push --schema=./prisma/schema1.prisma",
+    "prisma:push:db2": "prisma db push --schema=./prisma/schema2.prisma",
+    "prisma:push:all": "npm run prisma:push:db1 && npm run prisma:push:db2"
+  },
+  "keywords": ["express", "prisma", "postgresql", "multi-database"],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.19.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "prisma": "^6.19.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
